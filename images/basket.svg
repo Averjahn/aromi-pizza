@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Итальянская подарочная корзина с продуктами">
+  <defs>
+    <linearGradient id="wicker" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c98a4b"/>
+      <stop offset="1" stop-color="#9c6531"/>
+    </linearGradient>
+    <linearGradient id="wine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7a1020"/>
+      <stop offset="1" stop-color="#4d0a16"/>
+    </linearGradient>
+    <linearGradient id="oil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f7d3f"/>
+      <stop offset="1" stop-color="#1c5a2a"/>
+    </linearGradient>
+    <clipPath id="basketClip">
+      <path d="M70 250 q130 60 260 0 l-20 90 q-110 34 -220 0 z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Ручка корзины -->
+  <path d="M88 252 Q200 -160 312 252" fill="none" stroke="url(#wicker)" stroke-width="13" stroke-linecap="round"/>
+  <path d="M88 252 Q200 -160 312 252" fill="none" stroke="#7e4f24" stroke-width="13" stroke-linecap="round" stroke-dasharray="3 11" opacity=".5"/>
+
+  <!-- ===== Содержимое (за бортиком) ===== -->
+  <!-- Соломка-наполнитель -->
+  <g stroke="#e9dcae" stroke-width="3" stroke-linecap="round" opacity=".9">
+    <path d="M92 248 l16 -20"/><path d="M110 250 l8 -26"/><path d="M300 250 l-14 -22"/><path d="M286 252 l-4 -28"/><path d="M318 246 l-18 -16"/>
+  </g>
+
+  <!-- Бутылка вина -->
+  <g>
+    <rect x="150" y="78" width="34" height="170" rx="8" fill="url(#wine)"/>
+    <rect x="160" y="40" width="14" height="44" rx="3" fill="url(#wine)"/>
+    <rect x="158" y="36" width="18" height="12" rx="2" fill="#2b2b2b"/>
+    <rect x="150" y="150" width="34" height="58" fill="#f4ecd8"/>
+    <rect x="150" y="150" width="34" height="58" fill="none" stroke="#d8c79a"/>
+    <rect x="155" y="170" width="24" height="5" fill="#c8102e"/>
+    <rect x="155" y="180" width="24" height="3" fill="#1a7a44"/>
+  </g>
+
+  <!-- Пакет пасты -->
+  <g>
+    <rect x="196" y="92" width="78" height="156" rx="4" fill="#f7f1e2" stroke="#d8c79a"/>
+    <rect x="196" y="92" width="78" height="30" fill="#1f3a6b"/>
+    <text x="235" y="112" font-family="Georgia, serif" font-size="15" fill="#fff" text-anchor="middle" font-style="italic">Pasta</text>
+    <rect x="206" y="150" width="58" height="78" rx="3" fill="#efe6cf"/>
+    <g stroke="#d8b34a" stroke-width="2">
+      <path d="M214 160 q24 14 48 0"/><path d="M214 172 q24 14 48 0"/>
+      <path d="M214 184 q24 14 48 0"/><path d="M214 196 q24 14 48 0"/>
+      <path d="M214 208 q24 14 48 0"/>
+    </g>
+  </g>
+
+  <!-- Банка томатов -->
+  <g>
+    <rect x="96" y="150" width="56" height="98" rx="6" fill="#cf3a2a"/>
+    <rect x="96" y="150" width="56" height="98" rx="6" fill="none" stroke="#a82c1e"/>
+    <rect x="100" y="172" width="48" height="44" fill="#f7f1e2"/>
+    <circle cx="124" cy="194" r="11" fill="#e23b2e"/>
+    <path d="M124 184 l3 -5 l-3 2 l-3 -2 z" fill="#1a7a44"/>
+    <rect x="100" y="222" width="48" height="6" fill="#1a7a44"/>
+  </g>
+
+  <!-- Бутылка оливкового масла -->
+  <g>
+    <rect x="286" y="120" width="26" height="128" rx="6" fill="url(#oil)"/>
+    <rect x="292" y="92" width="14" height="32" rx="3" fill="url(#oil)"/>
+    <rect x="291" y="86" width="16" height="10" rx="2" fill="#1a7a44"/>
+    <rect x="286" y="160" width="26" height="46" fill="#f4ecd8"/>
+    <circle cx="299" cy="178" r="7" fill="#1a7a44"/>
+    <rect x="290" y="192" width="18" height="4" fill="#c8102e"/>
+  </g>
+
+  <!-- ===== Корпус корзины ===== -->
+  <g clip-path="url(#basketClip)">
+    <path d="M70 250 q130 60 260 0 l-20 90 q-110 34 -220 0 z" fill="url(#wicker)"/>
+    <!-- горизонтальные плетёные ряды -->
+    <g fill="none" stroke="#7e4f24" stroke-width="2" opacity=".55">
+      <path d="M70 268 q130 56 260 0"/>
+      <path d="M73 288 q127 52 254 0"/>
+      <path d="M77 308 q123 48 246 0"/>
+      <path d="M81 328 q119 44 238 0"/>
+    </g>
+    <!-- вертикальные «прутики» -->
+    <g fill="none" stroke="#83531f" stroke-width="2" opacity=".4">
+      <path d="M110 255 l10 90"/><path d="M150 262 l6 86"/><path d="M200 264 l0 86"/>
+      <path d="M250 262 l-6 86"/><path d="M290 255 l-10 90"/>
+    </g>
+  </g>
+
+  <!-- Верхний бортик-обод -->
+  <path d="M70 250 q130 60 260 0" fill="none" stroke="#8a5826" stroke-width="14" stroke-linecap="round"/>
+  <path d="M70 250 q130 60 260 0" fill="none" stroke="#b67c40" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 8"/>
+</svg>
