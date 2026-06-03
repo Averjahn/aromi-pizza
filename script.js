@@ -18,20 +18,21 @@ const getPizza = (id) => PIZZAS.find((p) => p.id === id);
 // ===== Рендер меню + фильтры =====
 let activeFilter = "Все";
 
-function allTags() {
-  const set = new Set();
-  PIZZAS.forEach((p) => p.tags.forEach((t) => set.add(t)));
-  return ["Все", ...set];
+// Категории берём из data.js (CATEGORIES), оставляя только реально присутствующие
+function categories() {
+  const present = new Set(PIZZAS.map((p) => p.cat));
+  const base = (typeof CATEGORIES !== "undefined") ? CATEGORIES : ["Все"];
+  return base.filter((c) => c === "Все" || present.has(c));
 }
 
 function renderFilters() {
   const box = $("#filters");
   box.innerHTML = "";
-  allTags().forEach((tag) => {
+  categories().forEach((cat) => {
     const btn = document.createElement("button");
-    btn.className = "filter" + (tag === activeFilter ? " active" : "");
-    btn.textContent = tag;
-    btn.onclick = () => { activeFilter = tag; renderFilters(); renderMenu(); };
+    btn.className = "filter" + (cat === activeFilter ? " active" : "");
+    btn.textContent = cat;
+    btn.onclick = () => { activeFilter = cat; renderFilters(); renderMenu(); };
     box.appendChild(btn);
   });
 }
@@ -41,7 +42,7 @@ function renderMenu() {
   grid.innerHTML = "";
   const list = activeFilter === "Все"
     ? PIZZAS
-    : PIZZAS.filter((p) => p.tags.includes(activeFilter));
+    : PIZZAS.filter((p) => p.cat === activeFilter);
 
   list.forEach((p) => {
     const card = document.createElement("article");
@@ -52,7 +53,7 @@ function renderMenu() {
         <span class="card__price">${money(p.price)} ₽</span>
       </div>
       <div class="card__body">
-        <div class="card__tags">${p.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
+        <div class="card__tags"><span class="tag">${p.cat}</span></div>
         <h3 class="card__name">${p.name}</h3>
         <p class="card__desc">${p.desc}</p>
         <button class="card__add" data-id="${p.id}">Добавить в корзину</button>

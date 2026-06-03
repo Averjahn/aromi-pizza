@@ -1,2 +1,4 @@
 .DS_Store
 *.log
+vk_raw.json
+vk_market.json
