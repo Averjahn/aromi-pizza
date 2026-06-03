@@ -100,18 +100,28 @@ h1, h2, h3, .logo__text, .card__name {
 
 /* ===== Корзина в шапке ===== */
 .cart-btn {
-  position: relative; display: inline-flex; align-items: center; gap: 8px;
+  position: relative; display: inline-flex; align-items: center; gap: 10px;
   background: #fff; color: var(--ink);
   border: 1px solid var(--ink); border-radius: 0;
-  font-size: 13px; font-weight: 700; letter-spacing: .06em;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .18em;
   padding: 11px 18px; cursor: pointer;
   transition: background .3s, color .3s;
 }
 .cart-btn:hover { background: var(--ink); color: #fff; }
+.cart-btn:hover .cart-btn__icon { stroke: #fff; }
+.cart-btn:hover .cart-count { background: #fff; color: var(--ink); }
+.cart-btn__icon {
+  width: 19px; height: 19px;
+  fill: none; stroke: var(--ink); stroke-width: 1.4;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: stroke .3s;
+}
+.cart-btn__label { line-height: 1; }
 .cart-count {
   display: inline-grid; place-items: center; min-width: 20px; height: 20px;
-  background: var(--red); color: #fff; border-radius: 0;
-  font-size: 12px; font-weight: 700; padding: 0 6px;
+  background: var(--ink); color: #fff; border-radius: 0;
+  font-size: 11px; font-weight: 700; letter-spacing: 0; padding: 0 6px;
+  transition: background .3s, color .3s;
 }
 
 /* ===== Hero ===== */
