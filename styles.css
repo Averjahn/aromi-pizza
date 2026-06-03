@@ -260,6 +260,26 @@ h1, h2, h3, .logo__text, .card__name {
 .footer p { font-size: 14px; margin: 4px 0; letter-spacing: .02em; }
 .footer a { color: #fff; border-bottom: 1px solid var(--red); }
 
+/* Часы работы */
+.hours { margin-top: 14px; }
+.hours__title {
+  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em;
+  color: #fff; margin-bottom: 12px;
+}
+.hours__row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 7px 0; max-width: 280px;
+}
+.hours__row + .hours__row { border-top: 1px solid rgba(255,255,255,.12); }
+.hours__days {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em;
+  color: var(--green); min-width: 56px;
+}
+.hours__dot { flex: 1; height: 1px; background: rgba(255,255,255,.18); }
+.hours__time {
+  font-family: "Cormorant Garamond", serif; font-size: 20px; font-weight: 600; color: #fff;
+}
+
 /* ===== Корзина (drawer) ===== */
 .overlay {
   position: fixed; inset: 0; background: rgba(20,18,15,.5);
