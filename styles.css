@@ -221,6 +221,37 @@ h1, h2, h3, .logo__text, .card__name {
 .about p { font-size: 19px; color: #45413a; font-family: "Cormorant Garamond", serif; line-height: 1.7; }
 .about p + p { margin-top: 14px; }
 
+/* ===== Карта ===== */
+.map-section { margin-bottom: 90px; }
+.map-wrap {
+  position: relative; margin-top: 34px;
+  border: 1px solid var(--line); background: #fff;
+}
+.map-frame { display: block; width: 100%; filter: grayscale(.15); }
+.map-card {
+  position: absolute; top: 22px; left: 22px; z-index: 2;
+  display: flex; align-items: flex-start; gap: 12px;
+  background: #fff; border: 1px solid var(--ink);
+  padding: 16px 20px; max-width: 320px;
+  box-shadow: 0 10px 30px rgba(28,28,28,.14);
+  transition: transform .25s, box-shadow .25s;
+}
+.map-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(28,28,28,.2); }
+.map-card__pin { font-size: 22px; line-height: 1.2; }
+.map-card__text { display: flex; flex-direction: column; gap: 3px; font-size: 14px; color: var(--ink); }
+.map-card__text strong {
+  font-family: "Cormorant Garamond", serif; font-size: 22px; font-weight: 700; line-height: 1;
+}
+.map-card__text em {
+  font-style: normal; margin-top: 6px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em;
+  color: var(--green);
+}
+
+@media (max-width: 560px) {
+  .map-card { position: static; max-width: none; border-top: none; }
+}
+
 /* ===== Подвал ===== */
 .footer { background: var(--ink); color: #d9d4cb; padding: 56px 0 40px; }
 .footer__inner { display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; }
