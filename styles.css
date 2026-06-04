@@ -45,6 +45,10 @@ h1, h2, h3, .logo__text, .card__name {
   height: 4px;
   background: linear-gradient(90deg,
     var(--green) 0 33.33%, #fff 33.33% 66.66%, var(--red) 66.66% 100%);
+  /* Доехав до низа «прилипшего» хедера, полоса цепляется и становится его нижней кромкой */
+  position: sticky;
+  top: var(--header-h, 84px);
+  z-index: 49;
 }
 
 /* ===== Шапка ===== */

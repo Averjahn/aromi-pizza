@@ -152,8 +152,16 @@ function openOrder() {
 }
 function closeOrder() { $("#orderModal").classList.remove("open"); }
 
+// Высота хедера → CSS-переменная, чтобы триколор прилипал ровно под ним
+function syncHeaderHeight() {
+  const h = document.querySelector(".header");
+  if (h) document.documentElement.style.setProperty("--header-h", h.offsetHeight + "px");
+}
+
 // ===== События =====
 document.addEventListener("DOMContentLoaded", () => {
+  syncHeaderHeight();
+  window.addEventListener("resize", syncHeaderHeight);
   renderFilters();
   renderMenu();
   updateCartUI();
