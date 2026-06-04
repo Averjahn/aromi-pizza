@@ -265,23 +265,24 @@ h1, h2, h3, .logo__text, .card__name {
 .footer a { color: #fff; border-bottom: 1px solid var(--red); }
 
 /* Часы работы */
-.hours { margin-top: 14px; }
+.hours { margin-top: 16px; }
 .hours__title {
-  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em;
-  color: #fff; margin-bottom: 12px;
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .22em;
+  color: #8a7f74; margin-bottom: 14px;
 }
 .hours__row {
-  display: flex; align-items: center; gap: 12px;
-  padding: 7px 0; max-width: 280px;
+  display: flex; align-items: baseline; gap: 14px;
+  padding: 9px 0; max-width: 260px;
 }
-.hours__row + .hours__row { border-top: 1px solid rgba(255,255,255,.12); }
+.hours__row + .hours__row { border-top: 1px solid rgba(255,255,255,.07); }
 .hours__days {
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em;
-  color: var(--green); min-width: 56px;
+  font-size: 12px; font-weight: 500; text-transform: lowercase; letter-spacing: .04em;
+  color: #a09690; min-width: 52px;
 }
-.hours__dot { flex: 1; height: 1px; background: rgba(255,255,255,.18); }
+.hours__dot { flex: 1; border-bottom: 1px dotted rgba(255,255,255,.14); margin-bottom: 4px; }
 .hours__time {
-  font-family: "Cormorant Garamond", serif; font-size: 20px; font-weight: 600; color: #fff;
+  font-family: "Cormorant Garamond", serif; font-size: 22px; font-weight: 500;
+  color: #f0ebe4; letter-spacing: .01em;
 }
 
 /* ===== Корзина (drawer) ===== */
