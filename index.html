@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аромат Aromi — пиццерия</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <img src="images/logo.jpg" alt="Аромат Aromi" class="logo__img"
+             onerror="this.style.display='none'">
+        <span class="logo__text">Аромат <span>Aromi</span></span>
+      </a>
+      <nav class="nav">
+        <a href="#menu">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <button id="cartBtn" class="cart-btn" aria-label="Корзина">
+        🛒 <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Кафе-пиццерия · с любовью к Италии</p>
+        <h1>Настоящая <em>итальянская</em> пицца на дровах</h1>
+        <p>Тесто суточного брожения, моцарелла фиор-ди-латте и томаты из солнечной Италии.
+          15&nbsp;фирменных рецептов с доставкой за&nbsp;45&nbsp;минут.</p>
+        <a href="#menu" class="btn">Смотреть меню</a>
+      </div>
+    </div>
+  </section>
+  <div class="tricolor"></div>
+
+  <main class="container">
+    <section id="menu" class="menu">
+      <div class="section-head">
+        <span class="section-eyebrow">Buon appetito</span>
+        <h2 class="section-title">Наше меню</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div id="filters" class="filters"></div>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="section-head">
+        <span class="section-eyebrow">La nostra storia</span>
+        <h2 class="section-title">О нас</h2>
+        <div class="section-rule"></div>
+      </div>
+      <p>«Аромат&nbsp;Aromi» — это итальянская пицца, приготовленная с душой. Мы используем
+        фирменное тесто суточного брожения, моцареллу фиор-ди-латте и томаты из солнечной Италии.</p>
+      <p>Каждая пицца выпекается в дровяной печи при&nbsp;350&nbsp;°C — так, как это делают
+        в&nbsp;Неаполе уже сотни лет.</p>
+    </section>
+  </main>
+
+  <footer id="contacts" class="footer">
+    <div class="container footer__inner">
+      <div>
+        <h3>Аромат <span>Aromi</span></h3>
+        <p>Доставка ежедневно с 10:00 до 23:00</p>
+      </div>
+      <div>
+        <p>📞 +7 (900) 000-00-00</p>
+        <p>📍 г. Москва, ул. Пиццерийная, 1</p>
+        <p>🔗 <a href="https://vk.com/aromipizza" target="_blank" rel="noopener">vk.com/aromipizza</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Боковая корзина -->
+  <div id="overlay" class="overlay"></div>
+  <aside id="cart" class="cart">
+    <div class="cart__head">
+      <h2>Корзина</h2>
+      <button id="cartClose" class="cart__close" aria-label="Закрыть">✕</button>
+    </div>
+    <div id="cartItems" class="cart__items"></div>
+    <div class="cart__foot">
+      <div class="cart__total">
+        Итого: <strong><span id="cartTotal">0</span> ₽</strong>
+      </div>
+      <button id="checkoutBtn" class="btn btn--primary btn--block">Оформить заказ</button>
+    </div>
+  </aside>
+
+  <!-- Модальное окно оформления заказа -->
+  <div id="orderModal" class="modal">
+    <div class="modal__box">
+      <button id="orderClose" class="modal__close" aria-label="Закрыть">✕</button>
+      <h2>Оформление заказа</h2>
+      <form id="orderForm" class="order-form">
+        <label>Имя
+          <input type="text" name="name" required placeholder="Как вас зовут?">
+        </label>
+        <label>Телефон
+          <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__">
+        </label>
+        <label>Адрес доставки
+          <input type="text" name="address" required placeholder="Улица, дом, квартира">
+        </label>
+        <label>Комментарий
+          <textarea name="comment" rows="2" placeholder="Без лука, позвонить за 10 минут…"></textarea>
+        </label>
+        <div class="order-form__total">К оплате: <strong><span id="orderTotal">0</span> ₽</strong></div>
+        <button type="submit" class="btn btn--primary btn--block">Подтвердить заказ</button>
+      </form>
+      <div id="orderSuccess" class="order-success" hidden>
+        <svg class="order-success__check" viewBox="0 0 52 52" aria-hidden="true">
+          <circle class="osc__circle" cx="26" cy="26" r="24" />
+          <path class="osc__tick" d="M16 27 l7 7 l14 -15" />
+        </svg>
+        <h3>Заказ принят</h3>
+        <p>Спасибо! Мы перезвоним для подтверждения в течение нескольких минут.</p>
+        <button id="successClose" class="btn">Отлично</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
